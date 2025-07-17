@@ -266,6 +266,12 @@ function App() {
           <button onClick={calcular}>=</button>
           <button onClick={() => agregarValor("/")}>/</button>
           <button onClick={elevarAlCuadrado}>x²</button>
+          <button
+            onClick={() => dolarBlue && agregarValor(dolarBlue.toString())}
+            disabled={!dolarBlue}
+          >
+            Dólar
+          </button>
         </div>
         <div className="instrucciones-teclado">
           <p>
