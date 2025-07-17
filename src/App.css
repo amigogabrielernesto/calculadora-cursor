@@ -1,0 +1,146 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-top: 50px;
+}
+
+.calculadora {
+  display: inline-block;
+  border: 2px solid var(--color-borde, #cccccc);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--fondo-calculadora, #ffffff);
+  position: relative;
+}
+
+.header-calculadora {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-bottom: 10px;
+}
+
+.botones-header {
+  display: flex;
+  gap: 5;
+}
+
+.botones-header-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 10px;
+  justify-content: flex-start;
+}
+
+.boton-copiar,
+.boton-configuracion {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.boton-copiar:hover,
+.boton-configuracion:hover {
+  background-color: var(--color-botones, #f0f0f0);
+}
+
+.boton-copiar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.boton-copiar:disabled:hover {
+  background-color: transparent;
+}
+
+.modal-configuracion {
+  position: absolute;
+  top: 10px;
+  background-color: var(--fondo-calculadora, #ffffff);
+  border: 2px solid var(--color-borde, #cccccc);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 200px;
+}
+
+.modal-configuracion h3 {
+  margin: 0 0 10px 0;
+  color: var(--color-texto, #333333);
+  font-size: 1.1em;
+}
+
+.opciones-tema {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.opcion-tema {
+  padding: 8px 12px;
+  border: 1px solid var(--color-borde, #cccccc);
+  border-radius: 5px;
+  background-color: var(--fondo-calculadora, #ffffff);
+  color: var(--color-texto, #333333);
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.opcion-tema:hover {
+  background-color: var(--color-botones, #f0f0f0);
+  transform: translateX(5px);
+}
+
+.botones {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid var(--color-borde, #cccccc);
+  border-radius: 5px;
+  background-color: var(--color-botones, #f0f0f0);
+  color: var(--color-texto, #333333);
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: var(--color-texto, #333333);
+  color: var(--fondo-calculadora, #ffffff);
+}
+
+.instrucciones-teclado {
+  margin-top: 15px;
+  font-size: 0.9em;
+  color: var(--color-texto, #333333);
+  opacity: 0.8;
+}
+
+.instrucciones-teclado p {
+  margin: 0;
+}
+
+input {
+  flex: 1;
+  height: 40px;
+  font-size: 1.5rem;
+  text-align: right;
+  padding: 5px;
+  border: 1px solid var(--color-borde, #cccccc);
+  border-radius: 5px;
+  background-color: var(--fondo-calculadora, #ffffff);
+  color: var(--color-texto, #333333);
+}
