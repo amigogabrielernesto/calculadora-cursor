@@ -10,6 +10,15 @@ function App() {
     texto: "#333333",
     borde: "#cccccc",
   });
+  const [dolarBlue, setDolarBlue] = useState(null);
+
+  useEffect(() => {
+    fetch("https://api.bluelytics.com.ar/v2/latest")
+      .then((res) => res.json())
+      .then((data) => {
+        setDolarBlue(data.blue.value_sell);
+      });
+  }, []);
 
   const temas = {
     claro: {
@@ -165,6 +174,11 @@ function App() {
   return (
     <div className="App">
       <h1>Calculadora Cursor</h1>
+      {dolarBlue && (
+        <div className="dolar-blue">
+          <strong>Dólar Blue:</strong> ${dolarBlue}
+        </div>
+      )}
       <div className="calculadora">
         <div className="header-calculadora">
           <input type="text" value={input} readOnly />
